@@ -59,7 +59,7 @@ class HomeScreen extends StatelessWidget {
 
                   ElevatedButton(
                     onPressed: () {
-                      print("Log In");
+                      print("Log In  page");
                     },
                     style: ButtonStyle(
                       foregroundColor: WidgetStatePropertyAll(
