@@ -1,3 +1,4 @@
+import 'package:day2/widgets/mydrawer.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -6,10 +7,8 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.teal,
-        title: Center(child: Text("HomeScreen")),
-      ),
+      appBar: AppBar(title: Center(child: Text("HomeScreen"))),
+      drawer: Mydrawer(),
       body: Center(
         child: Container(
           child: Text(

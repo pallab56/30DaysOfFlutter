@@ -1,0 +1,22 @@
+import "package:flutter/material.dart";
+import "package:google_fonts/google_fonts.dart";
+
+class MyThemes {
+  static ThemeData lightTheme(BuildContext context) => ThemeData(
+    brightness: Brightness.light,
+    primarySwatch: Colors.teal,
+    fontFamily: GoogleFonts.lato().fontFamily,
+    appBarTheme: AppBarThemeData(
+      backgroundColor: Colors.white,
+      iconTheme: IconThemeData(color: Colors.black),
+      centerTitle: true,
+      elevation: 0.0,
+    ),
+    textTheme: Theme.of(context).textTheme,
+    // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+  );
+
+  static ThemeData darkTheme(BuildContext context) {
+    return ThemeData(brightness: Brightness.dark);
+  }
+}

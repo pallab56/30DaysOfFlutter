@@ -1,5 +1,5 @@
-import 'package:day2/pages/login_screen.dart';
 import 'package:day2/utils/route_name.dart';
+import 'package:day2/widgets/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:day2/utils/routes.dart';
@@ -14,15 +14,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        fontFamily: GoogleFonts.lato().fontFamily,
-        // colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-      ),
+      theme:MyThemes.lightTheme(context),
+      darkTheme:MyThemes.darkTheme(context), 
 
-      initialRoute: RouteName.loginScreen,
+      initialRoute: RouteName.homeScreen,
       onGenerateRoute: Routes.generateRoute,
       //home: HomeScreen(),
     );
   }
 }
+
+
+
