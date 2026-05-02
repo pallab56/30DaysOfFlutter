@@ -60,12 +60,11 @@ class LoginScreen extends StatelessWidget {
 
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, RouteName.HomeScreen);
+                      Navigator.pushNamed(context, RouteName.homeScreen);
                     },
-                    style: ButtonStyle(
-                      foregroundColor: WidgetStatePropertyAll(
-                        Colors.amberAccent,
-                      ),
+                    style: TextButton.styleFrom(
+                      minimumSize: Size(150, 40),
+                      backgroundColor: Colors.purple[400],
                     ),
                     child: Text(
                       "Log In",
