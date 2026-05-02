@@ -1,7 +1,8 @@
+import 'package:day2/utils/route_name.dart';
 import 'package:flutter/material.dart';
 
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -59,12 +60,11 @@ class HomeScreen extends StatelessWidget {
 
                   ElevatedButton(
                     onPressed: () {
-                      print("Log In");
+                      Navigator.pushNamed(context, RouteName.HomeScreen);
                     },
                     style: ButtonStyle(
                       foregroundColor: WidgetStatePropertyAll(
                         Colors.amberAccent,
-                        
                       ),
                     ),
                     child: Text(
