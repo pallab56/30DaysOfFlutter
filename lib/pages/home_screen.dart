@@ -1,3 +1,5 @@
+import 'package:day2/models/catalog.dart';
+import 'package:day2/widgets/item_widget.dart';
 import 'package:day2/widgets/mydrawer.dart';
 import 'package:flutter/material.dart';
 
@@ -6,22 +8,16 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(20,(index)=>CatalogModel.items[0]);
     return Scaffold(
       appBar: AppBar(title: Center(child: Text("HomeScreen"))),
       drawer: Mydrawer(),
-      body: Center(
-        child: Container(
-          child: Text(
-            "Welcome To HomeScreen",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 24,
-              fontFamily: "GoogleFonts.abel()",
-              fontStyle: FontStyle.italic,
-            ),
-          ),
-        ),
-      ),
-    );
+      body: ListView.builder(
+        itemCount:dummyList.length,
+        itemBuilder: (context , index){
+          return ItemWidget(item: dummyList[index]);
+      })
+        );
+   
   }
 }
