@@ -1,7 +1,6 @@
 import 'package:day2/utils/route_name.dart';
 import 'package:day2/widgets/themes.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:day2/utils/routes.dart';
 
 void main() {
