@@ -11,6 +11,7 @@ class HomeDetailsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
+
       body: SafeArea(
         bottom: false,
         child: Column(
@@ -40,14 +41,21 @@ class HomeDetailsPage extends StatelessWidget {
                       catalog.description.text.xl
                           .textStyle(context.captionStyle)
                           .make(),
+                      20.heightBox,
+                      "Dolor sed eirmod takimata ea dolor. Ea elitr no labore nonumy. Rebum no est gubergren sadipscing clita et eos gubergren."
+                          .text
+                          .textStyle(context.captionStyle)
+                          .xl
+                          .make(),
                     ],
-                  ).p32(),
+                  ).py32(),
                 ),
               ),
             ),
           ],
         ),
       ),
+
       bottomNavigationBar: OverflowBar(
         alignment: MainAxisAlignment.spaceBetween,
         children: [
@@ -57,8 +65,8 @@ class HomeDetailsPage extends StatelessWidget {
             style: ButtonStyle(
               backgroundColor: WidgetStatePropertyAll(MyThemes.darkBluishColor),
             ),
-            child: "Buy".text.xl.color(Colors.white).make(),
-          ).wh(80, 40).pOnly(right: 8),
+            child: "Add to Cart".text.xl.color(Colors.white).make(),
+          ).wh(130, 40).pOnly(right: 8),
         ],
       ).p16(),
     );

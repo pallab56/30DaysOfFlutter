@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:day2/models/catalog.dart';
+import 'package:day2/pages/cart_page.dart';
 import 'package:day2/widgets/home_widgets/catalog_header.dart';
 import 'package:day2/widgets/home_widgets/catalog_list.dart';
 import 'package:day2/widgets/themes.dart';
@@ -105,6 +106,15 @@ class _HomeScreenState extends State<HomeScreen> {
       //       : Center(child: CircularProgressIndicator()),
       // ),
       backgroundColor: MyThemes.creamColor,
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, 
+          MaterialPageRoute(builder: 
+          (context)=>CartPage()));
+        },
+        backgroundColor: MyThemes.darkBluishColor,
+        child: Icon(Icons.shopping_cart_outlined,color: Colors.white,),
+      ),
       body: SafeArea(
         child: Container(
           padding: Vx.m12,
@@ -123,11 +133,3 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
-
-
-
-
-
-
-
-

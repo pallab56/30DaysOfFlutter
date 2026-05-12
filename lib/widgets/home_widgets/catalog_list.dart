@@ -16,10 +16,16 @@ class CatalogList extends StatelessWidget {
       itemBuilder: (context, index) {
         final catalog = CatalogModel.items[index];
         return InkWell(
-          onTap: (){
-           Navigator.push(context, MaterialPageRoute(builder:(context)=>HomeDetailsPage(catalog: catalog)));
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => HomeDetailsPage(catalog: catalog),
+              ),
+            );
           },
-          child: CatalogItem(catalog: catalog));
+          child: CatalogItem(catalog: catalog),
+        );
       },
     );
   }
@@ -28,8 +34,8 @@ class CatalogList extends StatelessWidget {
 class CatalogItem extends StatelessWidget {
   final Item catalog;
   const CatalogItem({required this.catalog, super.key})
-    // : assert(catalog != null)
-    ;
+  // : assert(catalog != null)
+  ;
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +44,8 @@ class CatalogItem extends StatelessWidget {
         children: [
           Hero(
             tag: Key(catalog.id.toString()),
-            child: CatalogImage(image: catalog.imageUrl)),
+            child: CatalogImage(image: catalog.imageUrl),
+          ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
@@ -61,7 +68,10 @@ class CatalogItem extends StatelessWidget {
                         MyThemes.darkBluishColor,
                       ),
                     ),
-                    child: "Buy".text.lg.color(Colors.white).make(),
+                    child: "Add to Cart".text.sm
+                        .color(Colors.white)
+                        .make()
+                        ,
                   ).pOnly(right: 8),
                 ],
               ),
