@@ -1,5 +1,6 @@
 import 'package:day2/utils/route_name.dart';
 import 'package:flutter/material.dart';
+import 'package:velocity_x/velocity_x.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -13,7 +14,7 @@ class _LoginScreenState extends State<LoginScreen> {
   bool changeButton = false;
   final _formkey = GlobalKey<FormState>();
   moveToHome(BuildContext context) async {
-     if (_formkey.currentState!.validate()) {
+    if (_formkey.currentState!.validate()) {
       setState(() {
         changeButton = true;
       });
@@ -29,7 +30,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: context.canvasColor,
       body: SingleChildScrollView(
         child: Column(
           children: [
@@ -38,7 +39,11 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(height: 20),
             Text(
               "$name Welcome To Our Page",
-              style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: context.primaryColor,
+              ),
             ),
 
             Padding(
@@ -49,10 +54,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   spacing: 20,
                   children: [
                     TextFormField(
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: "Enter UserName",
                         labelText: "UserName",
-                        labelStyle: TextStyle(fontSize: 18),
+                        labelStyle: TextStyle(
+                          fontSize: 18,
+                          color: Colors.white,
+                        ),
                         // helperText: "Must be fullfilled",
                         helperStyle: TextStyle(
                           decoration: TextDecoration.combine([
@@ -62,7 +71,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
 
                         // filled: true,
-                        fillColor: Colors.grey[100],
+                        // fillColor: Colors.grey,
                         border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -83,6 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
                     TextFormField(
                       obscureText: true,
+                      style: TextStyle(color: Colors.white),
                       decoration: InputDecoration(
                         hintText: "Enter Password",
                         labelText: "PassWord",
@@ -95,11 +105,10 @@ class _LoginScreenState extends State<LoginScreen> {
                           ),
                         ),
                       ),
-                       validator: (value) {
+                      validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "password Cannot Be Empty";
-                        }
-                        else if ( value.length<6) {
+                        } else if (value.length < 6) {
                           return "password length should Be at-least 6";
                         }
                         return null;

@@ -105,15 +105,16 @@ class _HomeScreenState extends State<HomeScreen> {
       //         )
       //       : Center(child: CircularProgressIndicator()),
       // ),
-      backgroundColor: MyThemes.creamColor,
+      backgroundColor: Theme.of(context).canvasColor,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.push(context, 
-          MaterialPageRoute(builder: 
-          (context)=>CartPage()));
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => CartPage()),
+          );
         },
-        backgroundColor: MyThemes.darkBluishColor,
-        child: Icon(Icons.shopping_cart_outlined,color: Colors.white,),
+        // backgroundColor: Theme.of(context).colorScheme.primary,
+        child: Icon(Icons.shopping_cart_outlined, color: context.cardColor),
       ),
       body: SafeArea(
         child: Container(

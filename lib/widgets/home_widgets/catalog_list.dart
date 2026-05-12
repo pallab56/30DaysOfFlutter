@@ -50,8 +50,9 @@ class CatalogItem extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              catalog.name.text.xl.bold.color(MyThemes.darkBluishColor).make(),
+              catalog.name.text.xl.color(context.primaryColor).bold.make(),
               catalog.description.text.lg
+                  .color(context.primaryColor)
                   .textStyle(context.captionStyle)
                   .make(),
               7.heightBox,
@@ -59,7 +60,7 @@ class CatalogItem extends StatelessWidget {
                 alignment: MainAxisAlignment.spaceBetween,
                 children: [
                   "\$${catalog.price}".text.bold.xl
-                      .color(MyThemes.darkBluishColor)
+                      .color(context.primaryColor)
                       .make(),
                   ElevatedButton(
                     onPressed: () {},
@@ -68,10 +69,7 @@ class CatalogItem extends StatelessWidget {
                         MyThemes.darkBluishColor,
                       ),
                     ),
-                    child: "Add to Cart".text.sm
-                        .color(Colors.white)
-                        .make()
-                        ,
+                    child: "Add to Cart".text.sm.color(Colors.white).make(),
                   ).pOnly(right: 8),
                 ],
               ),
@@ -79,6 +77,6 @@ class CatalogItem extends StatelessWidget {
           ).px8().expand(),
         ],
       ),
-    ).white.rounded.square(140).make().py8();
+    ).color(context.cardColor).rounded.square(140).make().py8();
   }
 }

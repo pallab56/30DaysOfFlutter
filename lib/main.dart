@@ -15,15 +15,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme:MyThemes.lightTheme(context),
-      darkTheme:MyThemes.darkTheme(context), 
+      themeMode: ThemeMode.system,
+      theme: MyThemes.lightTheme(context),
+      darkTheme: MyThemes.darkTheme(context),
 
-      initialRoute: RouteName.homeScreen,
+      initialRoute: RouteName.loginScreen,
       onGenerateRoute: Routes.generateRoute,
       //home: HomeScreen(),
     );
   }
 }
-
-
-

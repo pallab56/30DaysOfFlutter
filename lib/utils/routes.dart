@@ -1,3 +1,4 @@
+import 'package:day2/pages/cart_page.dart';
 import 'package:day2/pages/home_screen.dart';
 import 'package:day2/pages/login_screen.dart';
 import 'package:day2/utils/route_name.dart';
@@ -10,6 +11,8 @@ class Routes {
         return MaterialPageRoute(builder: (context) => HomeScreen());
       case RouteName.loginScreen:
         return MaterialPageRoute(builder: (context) => LoginScreen());
+      case RouteName.cartScreen:
+        return MaterialPageRoute(builder: (context)=>CartPage());
       default:
         return MaterialPageRoute(
           builder: (context) =>

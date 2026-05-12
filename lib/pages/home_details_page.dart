@@ -10,6 +10,7 @@ class HomeDetailsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: context.canvasColor,
       appBar: AppBar(),
 
       body: SafeArea(
@@ -30,7 +31,7 @@ class HomeDetailsPage extends StatelessWidget {
                 edge: VxEdge.top,
                 child: Container(
                   width: double.infinity,
-                  color: Colors.white,
+                  color: context.cardColor,
                   child: Column(
                     children: [
                       7.heightBox,
@@ -39,11 +40,13 @@ class HomeDetailsPage extends StatelessWidget {
                           .make(),
                       7.heightBox,
                       catalog.description.text.xl
+                          .color(context.primaryColor)
                           .textStyle(context.captionStyle)
                           .make(),
                       20.heightBox,
                       "Dolor sed eirmod takimata ea dolor. Ea elitr no labore nonumy. Rebum no est gubergren sadipscing clita et eos gubergren."
                           .text
+                          .color(context.primaryColor)
                           .textStyle(context.captionStyle)
                           .xl
                           .make(),
