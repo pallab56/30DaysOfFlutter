@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
       theme: MyThemes.lightTheme(context),
       darkTheme: MyThemes.darkTheme(context),
 
-      initialRoute: RouteName.loginScreen,
+      initialRoute: RouteName.cartScreen,
       onGenerateRoute: Routes.generateRoute,
       //home: HomeScreen(),
     );
